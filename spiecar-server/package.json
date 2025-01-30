@@ -1,0 +1,23 @@
+{
+  "name": "spiecar-server",
+  "version": "1.0.0",
+  "description": "A raspbarry pi api for the a spy car project",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start:virtual": "node dist/index.js virtual",
+    "start:pi": "node dist/index.js pi",
+    "watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.12.0",
+    "typescript": "^5.7.3"
+  }
+}
