@@ -1,23 +1,49 @@
 import Engine from "./engine";
+const Gpio = require('pigpio').Gpio;
+
+const leftEngineFront = new Gpio(27, {mode: Gpio.OUTPUT});
+const leftEngineRear = new Gpio(22, {mode: Gpio.OUTPUT});
+const rightEngineFront = new Gpio(17, {mode: Gpio.OUTPUT});
+const rightEngineRear = new Gpio(23, {mode: Gpio.OUTPUT});
 
 export default class PiEngine implements Engine {
-    moveForward(): void {
-        console.log("Moving forward");
+    moveForward() {
+        console.log('Forward');
+        leftEngineFront.digitalWrite(1);
+        leftEngineRear.digitalWrite(0);
+        rightEngineFront.digitalWrite(1);
+        rightEngineRear.digitalWrite(0);
     }
 
-    moveBackward(): void {
-        console.log("Moving backward");
+    moveBackward() {
+        console.log('Backward');
+        leftEngineFront.digitalWrite(0);
+        leftEngineRear.digitalWrite(1);
+        rightEngineFront.digitalWrite(0);
+        rightEngineRear.digitalWrite(1);
     }
 
-    turnRight(): void {
-        console.log("Turning right");
+    turnLeft() {
+        console.log('Left');
+        leftEngineFront.digitalWrite(0);
+        leftEngineRear.digitalWrite(1);
+        rightEngineFront.digitalWrite(1);
+        rightEngineRear.digitalWrite(0);
     }
 
-    turnLeft(): void {
-        console.log("Turning left");
+    turnRight() {
+        console.log('Right');
+        leftEngineFront.digitalWrite(1);
+        leftEngineRear.digitalWrite(0);
+        rightEngineFront.digitalWrite(0);
+        rightEngineRear.digitalWrite(1);
     }
 
-    stop(): void {
-        console.log("Stopping");
+    stop() {
+        console.log('Stop');
+        leftEngineFront.digitalWrite(0);
+        leftEngineRear.digitalWrite(0);
+        rightEngineFront.digitalWrite(0);
+        rightEngineRear.digitalWrite(0);
     }
 }
