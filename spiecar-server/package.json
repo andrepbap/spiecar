@@ -5,15 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start:virtual": "node dist/index.js virtual",
+    "start:dev": "node dist/index.js dev",
     "start:pi": "sudo node dist/index.js pi",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "4.21.2",
-    "pigpio": "3.3.1"
+    "express": "4.21.2"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",

@@ -8,9 +8,9 @@ export namespace CarFactory {
 
         let engine: Engine;
 
-        if (carType === 'virtual') {
-            const VirtualEngine = require('../domain/virtual-engine').default;
-            engine = new VirtualEngine();
+        if (carType === 'dev') {
+            const FakeEngine = require('../domain/fake-engine').default;
+            engine = new FakeEngine();
         } else {
             const PiEngine = require('../domain/pi-engine').default;
             engine = new PiEngine();

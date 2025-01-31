@@ -1,6 +1,6 @@
 import Engine from "./engine";
 
-export default class VirtualEngine implements Engine {
+export default class FakeEngine implements Engine {
     moveForward(): void {
         console.log("Moving forward");
     }
