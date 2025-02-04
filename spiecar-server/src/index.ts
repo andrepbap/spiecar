@@ -1,9 +1,12 @@
 import express, { Request, Response } from 'express';
+import cors from 'cors';
 import { CarFactory } from './infra/car-factory';
 import { Command } from './enums/command';
 
 const app = express();
 const car = CarFactory.createCar();
+
+app.use(cors());
 
 app.post('/car/move/:command', (req: Request, res: Response) => {
     const command = req.params.command as Command;
